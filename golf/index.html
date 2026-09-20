@@ -9,73 +9,177 @@
 <meta name="referrer" content="no-referrer">
 <meta name="color-scheme" content="light">
 <meta property="og:title" content="2016 Golf Alltrack — 140,000 km">
-<meta property="og:description" content="Grey 2016 Golf Alltrack, 140,000 km, all-wheel drive, tow bar, rego to 18 December 2026.">
+<meta property="og:description" content="Grey 2016 Golf Alltrack, 140,000 km, all-wheel drive, tow bar, NSW rego to 18 December 2026.">
 <meta property="og:type" content="website">
 <style>
+  /* Simple.css v2 (https://simplecss.org, https://cdn.simplecss.org/simple.css),
+     trimmed to the rules this page actually uses: html/body, body > *,
+     body > header, main, body > footer, h1, h2, p, dt, mobile + print. */
   :root {
-    --ink: #1a1a19;
-    --ink2: #52514e;
-    --ink3: #7a7975;
-    --rule: #d9d8d3;
+    --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+      "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
+      "Helvetica Neue", sans-serif;
+    --border-width: 1px;
+    --standard-border-radius: 5px;
+
     --bg: #fcfcfb;
+    --text: #1a1a19;
+    --text-light: #585858;
+    --border: #d9d8d3;
+    --accent-bg: #f2f1ee;
   }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  html {
+    font-family: var(--sans-font);
+  }
   body {
+    color: var(--text);
+    background-color: var(--bg);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    display: grid;
+    grid-template-columns: 1fr min(45rem, 90%) 1fr;
     margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-variant-numeric: tabular-nums;
   }
-  .wrap { max-width: 38rem; margin: 0 auto; padding: 28px 20px 56px; }
-  header { padding-bottom: 18px; border-bottom: 2px solid var(--ink); }
+  body > * {
+    grid-column: 2;
+  }
+  body > header {
+    background-color: var(--accent-bg);
+    border-bottom: var(--border-width) solid var(--border);
+    text-align: center;
+    padding: 0 0.5rem 2rem 0.5rem;
+    grid-column: 1 / -1;
+  }
+  body > header h1 {
+    max-width: 1200px;
+    margin: 1rem auto;
+  }
+  body > header p {
+    max-width: 40rem;
+    margin: 1rem auto;
+  }
+  main {
+    padding-top: 1.5rem;
+  }
+  body > footer {
+    margin-top: 4rem;
+    padding: 2rem 1rem 1.5rem 1rem;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: var(--border-width) solid var(--border);
+  }
   h1 {
-    margin: 0 0 6px;
-    font-size: clamp(1.45rem, 1.1rem + 3vw, 2rem);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    font-size: 3rem;
   }
-  .lede { margin: 0; color: var(--ink2); font-size: 0.95rem; }
-  .price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 16px 0 0; }
-  .price b { font-size: clamp(2.7rem, 1.95rem + 6vw, 3.6rem); line-height: 1; letter-spacing: -0.03em; }
   h2 {
-    margin: 30px 0 10px;
-    font-size: 0.76rem;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-    color: var(--ink3);
-    font-weight: 600;
+    font-size: 2.6rem;
+    margin-top: 3rem;
   }
-  .facts { margin: 0; border-top: 1px solid var(--rule); }
-  .facts div {
-    display: flex; justify-content: space-between; gap: 14px;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--rule);
+  p {
+    margin: 1.5rem 0;
   }
-  .facts dt { color: var(--ink2); flex: 0 0 auto; }
-  .facts dd { margin: 0; text-align: right; font-weight: 600; }
-  footer {
-    margin-top: 36px; padding-top: 12px;
-    border-top: 1px solid var(--rule);
-    color: var(--ink3); font-size: 0.8rem;
+  p, h1, h2 {
+    overflow-wrap: break-word;
+  }
+  h1, h2 {
+    line-height: 1.1;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--standard-border-radius);
+  }
+  figure {
+    margin: 0;
+    display: block;
+    overflow-x: auto;
+  }
+  figure > img {
+    display: block;
+    margin-inline: auto;
+  }
+  dt {
+    color: var(--text-light);
+  }
+  @media only screen and (max-width: 720px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 2.1rem;
+    }
   }
   @media print {
-    :root { --bg: #fff; }
-    .wrap { padding: 0; max-width: none; }
+    @page {
+      margin: 1cm;
+    }
+    body {
+      display: block;
+    }
+    body > header {
+      background: unset;
+    }
+  }
+
+  /* Page-specific: photo grid, price scale, compact spec rows. */
+  .photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0.5rem;
+  }
+  .photos img {
+    width: 100%;
+  }
+  .price b {
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+  .facts {
+    margin: 0;
+  }
+  .facts div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: var(--border-width) solid var(--border);
+  }
+  .facts dt {
+    flex: 0 0 auto;
+  }
+  .facts dd {
+    margin: 0;
+    text-align: right;
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
   <header>
     <h1>2016 Volkswagen Golf Alltrack</h1>
-    <p class="lede">Grey · Wagon · AWD · 140,000 km</p>
+    <p>Grey · Wagon · AWD · 140,000 km</p>
     <p class="price"><b>$12,000</b></p>
   </header>
 
   <main>
+    <h2>Photos</h2>
+    <div class="photos">
+      <figure><img src="photo-02.jpg" width="640" height="480" alt="Front three-quarter view" decoding="async"></figure>
+      <figure><img src="photo-03.jpg" width="640" height="480" alt="Front three-quarter view from the other side" loading="lazy" decoding="async"></figure>
+      <figure><img src="photo-09.jpg" width="640" height="480" alt="Rear three-quarter view" loading="lazy" decoding="async"></figure>
+      <figure><img src="photo-01.jpg" width="640" height="480" alt="Rear of the car with tow bar" loading="lazy" decoding="async"></figure>
+      <figure><img src="photo-00.jpg" width="640" height="480" alt="Front seats and dashboard" loading="lazy" decoding="async"></figure>
+      <figure><img src="photo-07.jpg" width="480" height="640" alt="Steering wheel and dashboard" loading="lazy" decoding="async"></figure>
+      <figure><img src="photo-04.jpg" width="480" height="640" alt="Rear seats" loading="lazy" decoding="async"></figure>
+      <figure><img src="photo-05.jpg" width="480" height="640" alt="Centre console and touchscreen" loading="lazy" decoding="async"></figure>
+      <figure><img src="photo-06.jpg" width="480" height="640" alt="Door cards and door pockets" loading="lazy" decoding="async"></figure>
+      <figure><img src="photo-08.jpg" width="640" height="480" alt="Engine bay" loading="lazy" decoding="async"></figure>
+    </div>
+
     <h2>Details</h2>
     <dl class="facts">
       <div><dt>Year</dt><dd>2016</dd></div>
@@ -86,6 +190,7 @@
       <div><dt>Transmission</dt><dd>Automatic (DSG)</dd></div>
       <div><dt>Drive</dt><dd>All-wheel drive</dd></div>
       <div><dt>Fuel</dt><dd>Always used 98 <br>Uses about 8.5 L/100 km</dd></div>
+      <div><dt>Seatcovers</dt><dd>Comes with custom neoprene seatcovers for the front seats</dd></div>
       <div><dt>Tow bar</dt><dd>Fitted at ISP Glendale shortly after purchase.</dd></div>
       <div><dt>Registration</dt><dd>NSW, to 18 Dec 2026</dd></div>
     </dl>
@@ -95,6 +200,8 @@
     Last updated 19 September 2026.
   </footer>
 
-</div>
+<script data-goatcounter="https://dnlrbns.goatcounter.com/count"
+        data-goatcounter-settings='{"path":"/golf-qr"}'
+        async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
